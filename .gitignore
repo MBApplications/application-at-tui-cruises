@@ -1,0 +1,87 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+*.egg-info/
+*.eggs/
+dist/
+build/
+*.whl
+
+# JavaScript/Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+*.tgz
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.class
+target/
+*.log
+*.iml
+
+# Ruby
+*.gem
+*.rbc
+/.bundle/
+/log/*
+/tmp/*
+/vendor/bundle/
+/vendor/cache/
+/vendor/ruby/
+
+# C/C++
+*.o
+*.out
+*.exe
+*.class
+*.so
+*.dll
+*.dSYM/
+*.idb
+
+# .NET
+bin/
+obj/
+*.sln
+*.user
+*.suo
+
+# Visual Studio Code
+.vscode/
+.history/
+*.code-workspace
+
+# Operating System Files
+.DS_Store         # macOS
+Thumbs.db        # Windows
+*.swp            # Swap files (Linux, Unix)
+
+# Logs
+*.log
+
+# IDE specific
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.iml
+*.sublime-settings
+
+# Other
+*.tmp
+*.bak
+*.orig
+*.lock
+*.pid
+*.seed
+*.sqlite
+*.db
