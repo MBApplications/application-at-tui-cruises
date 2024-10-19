@@ -30,6 +30,11 @@ class DataVisualization:
 
         cmap = plt.get_cmap("jet", len(df["coordinates"]))
         granularity = 100
+        cmap_caption = 'arbitrary'
+        zoom_control = True
+
+        if "zoom_control" in kwargs.keys():
+            zoom_control = kwargs["zoom_control"]
 
         if "cmap" in kwargs.keys():
             cmap = plt.get_cmap(kwargs["cmap"], len(df["coordinates"]))
@@ -37,12 +42,30 @@ class DataVisualization:
         if "granularity" in kwargs.keys():
             granularity = kwargs["granularity"]
 
+        if "cmap_title" in kwargs.keys():
+            cmap_caption = kwargs["cmap_title"]
+
         if "color_representation" in kwargs.keys():
             color_representation = kwargs["color_representation"]
             max_value = df[color_representation].max()
 
+            colormap = branca.colormap.LinearColormap(
+                colors=[cmap(i) for i in range(cmap.N)],
+                vmin=0,
+                vmax=df[color_representation].max(),
+            ).to_step(100)
+
+        else:
+            colormap = branca.colormap.LinearColormap(
+                colors=[cmap(i) for i in range(cmap.N)],
+                vmin=0,
+                vmax=100,
+            ).to_step(100)
+        
+        colormap.caption = cmap_caption
+
         map = folium.Map(
-            location=[47.00395, -10.40428], tiles="OpenStreetMap", zoom_start=3
+            location=[47.00395, -10.40428], tiles="OpenStreetMap", zoom_start=3, scrollWheelZoom=zoom_control,control_scale=zoom_control, dragging=zoom_control
         )
 
         # cmap = plt.get_cmap('jet', len(df['coordinates']))
@@ -54,7 +77,9 @@ class DataVisualization:
 
                     if "color_representation" in kwargs.keys():
                         color_index_tmp = df[color_representation][curr_index]
-                        color_index_tmp2 = round(len(df["coordinates"])*color_index_tmp/max_value)
+                        color_index_tmp2 = round(
+                            len(df["coordinates"]) * color_index_tmp / max_value
+                        )
                         folium.PolyLine(
                             locations=[previous_value, curr_value],
                             color=hex_colors[color_index_tmp2],
@@ -71,11 +96,13 @@ class DataVisualization:
 
                 previous_value = curr_value
 
-        folium.Marker(location=[curr_value[0], curr_value[1]],
-                popup=f"CURRENT POSITION:<br>"
-                    f"Lattitude: {curr_value[0]}<br>"
-                    f"Longitude: {curr_value[1]}<br>",
-                icon=folium.Icon(color='#C154C1')
-                ).add_to(map)
+        folium.Marker(
+            location=[curr_value[0], curr_value[1]],
+            popup=f"CURRENT POSITION:<br>"
+            f"Lattitude: {curr_value[0]}<br>"
+            f"Longitude: {curr_value[1]}<br>",
+            icon=folium.Icon(color="#C154C1"),
+        ).add_to(map)
         # map.add_child(cmap)
+        colormap.add_to(map)
         return map
