@@ -16,5 +16,15 @@ class RawDataReader:
         df = pd.read_csv(self.raw_data_path + "data.csv")
         return df
     
-    def get_rawdata_columns(self):
-        return self.read_rawdata().columns
+    def print_rawdata_columns(self):
+        column_names = self.read_rawdata().columns.tolist()
+        pretty_string = ""
+        list_groups =["Power Galley"]
+        for curr_index, curr_value in enumerate(column_names):
+            for curr_value2 in list_groups:
+                # if curr_value.find(curr_value2) > -1:
+                pretty_string += curr_value + "\n"
+            # if len(curr_index) % 100 == 0:
+            #     pretty_count = 1
+            #     pretty_string += "\n"
+        print(pretty_string)
