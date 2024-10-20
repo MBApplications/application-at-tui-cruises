@@ -13,7 +13,7 @@ performance trends (e.g.: efficiency, propulsion, power generation, etc.).
 - [Used Software](#used-software)
 - [Installation / Usage](#installation--usage)
 - [Folder-Order](#folder-order)
-- [To-Do](#to-do)
+- [To-Do and Improvements for Next Time](#to-do-and-improvements-for-next-time)
 - [Contributions](#contributions)
 - [Acknowledgments](#acknowledgments)
 
@@ -54,14 +54,19 @@ Programming is performed using the open source distribution of VS Code from Micr
         main_export.html              <-- html export of main notebook
 ```
 
-# To-Do
+# To-Do and Improvements for Next Time
+Unfortunately, I'm currently very busy at the moment and had to skip the following essentials:
 - alternatively start the docker container
 - transfer Data to SQL-DB (respecting 3.5 normal forms)
+- convert all numbers into SI-units
 - extraction of requirements.txt using Python-venv
 - data visualization with Web-UI (Django or Dash, example: https://dash.gallery/dash-opioid-epidemic/)
 - dockerization of main.py, exposing web-UI to localhost
 - improved branch-management and connection to Kanban-board (agiles management)
 - improved object-oriented structure (classes, subclasses, modules) and sustainable programming (markdown-description, improved commit-messages etc.)
+Typically, I would expose the results on a web-UI using the modules Dash and/or Django, e.g. as shown here:
+https://dash.gallery/dash-opioid-epidemic/
+Hope, that the here presented work is still sufficient...
 
 # Contributions
 This project has only contributer, which is the applicant himself.

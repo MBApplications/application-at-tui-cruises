@@ -4,7 +4,7 @@ class DataVisualization:
         pass
 
     @staticmethod
-    def plot_x_y(x_values, y_values, *args, **kwargs):
+    def plot_x_y(x_values, y_values, title, *args, **kwargs):
         import plotly.graph_objects as go
 
         fig = go.Figure()
@@ -12,7 +12,7 @@ class DataVisualization:
             go.Scatter(x=x_values, y=y_values, mode="lines+markers", name="Line Plot")
         )
         fig.update_layout(
-            title="Simple Line Plot Example",
+            title=title,
             xaxis_title="X Axis",
             yaxis_title="Y Axis",
         )
@@ -26,9 +26,10 @@ class DataVisualization:
         import matplotlib.pyplot as plt
         import branca
         import matplotlib
-        import matplotlib.pyplot as plt
+        import numpy as np
 
-        cmap = plt.get_cmap("jet", len(df["coordinates"]))
+        # cmap = plt.get_cmap("jet", len(df["coordinates"]))
+        cmap = plt.get_cmap("jet", 100)
         granularity = 100
         cmap_caption = 'arbitrary'
         zoom_control = True
@@ -48,11 +49,13 @@ class DataVisualization:
         if "color_representation" in kwargs.keys():
             color_representation = kwargs["color_representation"]
             max_value = df[color_representation].max()
-
+            max_value_round=round(max_value)+1
+            # print("cmap.N", cmap.N)
             colormap = branca.colormap.LinearColormap(
                 colors=[cmap(i) for i in range(cmap.N)],
                 vmin=0,
-                vmax=df[color_representation].max(),
+                vmax=max_value,
+            # ).to_step(max_value_round)
             ).to_step(100)
 
         else:
@@ -69,6 +72,7 @@ class DataVisualization:
         )
 
         # cmap = plt.get_cmap('jet', len(df['coordinates']))
+        # print("cmap.N", cmap.N)
         hex_colors = [matplotlib.colors.rgb2hex(cmap(i)[:3]) for i in range(cmap.N)]
         for curr_index, curr_value in enumerate(df["coordinates"]):
             if curr_index % granularity == 0:
@@ -77,9 +81,7 @@ class DataVisualization:
 
                     if "color_representation" in kwargs.keys():
                         color_index_tmp = df[color_representation][curr_index]
-                        color_index_tmp2 = round(
-                            len(df["coordinates"]) * color_index_tmp / max_value
-                        )
+                        color_index_tmp2 = int(round(cmap.N*(color_index_tmp-1)/max_value))
                         folium.PolyLine(
                             locations=[previous_value, curr_value],
                             color=hex_colors[color_index_tmp2],

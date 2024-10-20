@@ -1,0 +1,44 @@
+Start Time		                        |   Startzeit
+End Time		                        |   Endzeit
+Vessel Name		                        |   Schiffsname
+Power Galley 1 (MW): 				    |   Stromkombüse, power supply no. 1
+Power Galley 2 (MW): 				    |              -||-            no. 2
+Power Service (MW)	            	    |   Stromversorgung
+HVAC Chiller 1 Power (MW):			    |   Klimakühlgerät, cooling system no. 1
+HVAC Chiller 2 Power (MW):			    |                 -||-             no. 2
+HVAC Chiller 3 Power (MW):			    |                 -||-             no. 3
+Scrubber Power (MW)					    |   Wäscherleistung
+Sea Temperature (Celsius)				|   Wassertemperatur
+Boiler 1 Fuel Flow Rate (L/h)		    |   Kessel 1 Brennstoffdurchsatz no. 1
+Boiler 2 Fuel Flow Rate (L/h)		    |                -||-            no. 2
+Incinerator 1 Fuel Flow Rate (L/h)	    |   Verbrennungsanlage 1 Brennstoffdurchsatz
+Diesel Generator 1 Power (MW)		    |   Diesel Generator no. 1
+Diesel Generator 2 Power (MW)		    |         -||-       no. 2
+Diesel Generator 3 Power (MW)		    |         -||-       no. 2
+Diesel Generator 4 Power (MW)		    |         -||-       no. 2
+Latitude (Degrees)		                |   Latitude
+Longitude (Degrees)		                |   Longitude
+Relative Wind Angle (Degrees)		    |   Relativer Windwinkel
+True Wind Angle (Degrees)		        |   Absoluter Windwinkel
+Depth (m)		                        |   Tiefe
+Relative Wind Direction (Degrees)		|   Relative Windrichtung
+True Wind Direction (Degrees)		    |   Absolute Windrichtung
+Draft (m)						        |   Tiefgang
+Speed Over Ground (knots)		        |   Geschwindigkeit über Grund
+True Wind Speed (knots)		            |   Relative Windgeschwindigkeit
+Relative Wind Speed (knots)		        |   Absolute Windgeschwindigkeit
+Speed Through Water (knots)		        |   Geschwindigkeit durch das Wasser (relativ)
+Local Time (h)		                    |   lokale Uhrzeit
+Trim (m)		                        |   Trimmung
+Propulsion Power (MW):			        |   Antriebsleistung
+Port Side Propulsion Power (MW)		    |   Backboard (links) Antriebsleistung
+Starboard Side Propulsion Power (MW)	|   Steuerbord (rechts) Antriebsleistung
+Bow Thruster 1 Power (MW)		        |   Bugstrahlruder  no. 1
+Bow Thruster 2 Power (MW)		        |        -||-       no. 2
+Bow Thruster 3 Power (MW)		        |        -||-       no. 3
+Stern Thruster 1 Power (MW)		        |   Heckstrahlruder no. 1
+Stern Thruster 2 Power (MW)		        |        -||-       no. 2
+Main Engine 1 Fuel Flow Rate (kg/h)		|   Hauptmotor Kraftstoffdurchsatz no. 1
+Main Engine 2 Fuel Flow Rate (kg/h)		|               -||-               no. 2
+Main Engine 3 Fuel Flow Rate (kg/h)		|               -||-               no. 3
+Main Engine 4 Fuel Flow Rate (kg/h)		|               -||-               no. 4
