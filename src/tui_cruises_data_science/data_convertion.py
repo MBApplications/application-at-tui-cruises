@@ -26,3 +26,30 @@ def divide_columns(df, column_names_list, divide_column_name):
     df_divide = df[column_names_list[0]].divide(df[column_names_list[1]].replace(0, pd.NA))
     df[divide_column_name] = df_divide
     return df
+
+def __sliding_window_deque(lst, window_size):
+    from collections import deque
+    import numpy as np
+
+    d = deque(maxlen=window_size)
+    result = []
+    
+    for item in lst:
+        d.append(item)
+        if len(d) == window_size:
+            result.append(list(d))
+    
+    result_tmp=[]
+    for curr_value in result:
+        result_tmp.append(np.mean(curr_value))
+    return result_tmp
+
+def smoothen_data_reduction(df, window_size):
+    import pandas as pd
+
+    dict_tmp={}
+    for curr_index, curr_value in enumerate(df.columns):
+        result = __sliding_window_deque(df[curr_value], window_size)
+        dict_tmp[curr_value] = result
+
+    return pd.DataFrame(dict_tmp)

@@ -20,6 +20,23 @@ class DataVisualization:
         return fig.show()
 
     @staticmethod
+    def plot_x_semiy(x_values, y_values, title, *args, **kwargs):
+        import plotly.graph_objects as go
+
+        fig = go.Figure()
+        fig.add_trace(
+            go.Scatter(x=x_values, y=y_values, mode="lines+markers", name="Line Plot")
+        )
+        fig.update_layout(
+            title=title,
+            xaxis_title="X Axis",
+            yaxis_title="Y Axis",
+            yaxis_type='log'
+        )
+
+        return fig.show()
+
+    @staticmethod
     def map_x_y(df, *args, **kwargs):
         import pandas as pd
         import folium
