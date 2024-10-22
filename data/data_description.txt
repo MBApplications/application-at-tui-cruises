@@ -25,8 +25,8 @@ Relative Wind Direction (Degrees)		|   Relative Windrichtung
 True Wind Direction (Degrees)		    |   Absolute Windrichtung
 Draft (m)						        |   Tiefgang
 Speed Over Ground (knots)		        |   Geschwindigkeit über Grund
-True Wind Speed (knots)		            |   Relative Windgeschwindigkeit
-Relative Wind Speed (knots)		        |   Absolute Windgeschwindigkeit
+True Wind Speed (knots)		            |   Absolute Windgeschwindigkeit
+Relative Wind Speed (knots)		        |   Relative Windgeschwindigkeit
 Speed Through Water (knots)		        |   Geschwindigkeit durch das Wasser (relativ)
 Local Time (h)		                    |   lokale Uhrzeit
 Trim (m)		                        |   Trimmung

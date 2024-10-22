@@ -7,34 +7,52 @@ class DataVisualization:
     def plot_x_y(x_values, y_values, title, *args, **kwargs):
         import plotly.graph_objects as go
 
+        xaxis_title = "xaxis_title"
+        yaxis_title = "yaxis_title"
+
+        if "xaxis_title" in kwargs.keys():
+            xaxis_title = kwargs["xaxis_title"]
+
+        if "yaxis_title" in kwargs.keys():
+            yaxis_title = kwargs["yaxis_title"]
+
         fig = go.Figure()
         fig.add_trace(
             go.Scatter(x=x_values, y=y_values, mode="lines+markers", name="Line Plot")
         )
         fig.update_layout(
             title=title,
-            xaxis_title="X Axis",
-            yaxis_title="Y Axis",
+            xaxis_title=xaxis_title,
+            yaxis_title=yaxis_title,
         )
 
-        return fig.show()
+        return fig
 
     @staticmethod
     def plot_x_semiy(x_values, y_values, title, *args, **kwargs):
         import plotly.graph_objects as go
 
+        xaxis_title = "xaxis_title"
+        yaxis_title = "yaxis_title"
+
+        if "xaxis_title" in kwargs.keys():
+            xaxis_title = kwargs["xaxis_title"]
+
+        if "yaxis_title" in kwargs.keys():
+            yaxis_title = kwargs["yaxis_title"]
+
         fig = go.Figure()
         fig.add_trace(
             go.Scatter(x=x_values, y=y_values, mode="lines+markers", name="Line Plot")
         )
         fig.update_layout(
             title=title,
-            xaxis_title="X Axis",
-            yaxis_title="Y Axis",
-            yaxis_type='log'
+            xaxis_title=xaxis_title,
+            yaxis_title=yaxis_title,
+            yaxis_type="log",
         )
 
-        return fig.show()
+        return fig
 
     @staticmethod
     def map_x_y(df, *args, **kwargs):
@@ -48,7 +66,7 @@ class DataVisualization:
         # cmap = plt.get_cmap("jet", len(df["coordinates"]))
         cmap = plt.get_cmap("jet", 100)
         granularity = 100
-        cmap_caption = 'arbitrary'
+        cmap_caption = "arbitrary"
         zoom_control = True
 
         if "zoom_control" in kwargs.keys():
@@ -66,13 +84,13 @@ class DataVisualization:
         if "color_representation" in kwargs.keys():
             color_representation = kwargs["color_representation"]
             max_value = df[color_representation].max()
-            max_value_round=round(max_value)+1
+            max_value_round = round(max_value) + 1
             # print("cmap.N", cmap.N)
             colormap = branca.colormap.LinearColormap(
                 colors=[cmap(i) for i in range(cmap.N)],
                 vmin=0,
                 vmax=max_value,
-            # ).to_step(max_value_round)
+                # ).to_step(max_value_round)
             ).to_step(100)
 
         else:
@@ -81,11 +99,16 @@ class DataVisualization:
                 vmin=0,
                 vmax=100,
             ).to_step(100)
-        
+
         colormap.caption = cmap_caption
 
         map = folium.Map(
-            location=[47.00395, -10.40428], tiles="OpenStreetMap", zoom_start=3, scrollWheelZoom=zoom_control,control_scale=zoom_control, dragging=zoom_control
+            location=[47.00395, -10.40428],
+            tiles="OpenStreetMap",
+            zoom_start=3,
+            scrollWheelZoom=zoom_control,
+            control_scale=zoom_control,
+            dragging=zoom_control,
         )
 
         # cmap = plt.get_cmap('jet', len(df['coordinates']))
@@ -98,7 +121,9 @@ class DataVisualization:
 
                     if "color_representation" in kwargs.keys():
                         color_index_tmp = df[color_representation][curr_index]
-                        color_index_tmp2 = int(round(cmap.N*(color_index_tmp-1)/max_value))
+                        color_index_tmp2 = int(
+                            round(cmap.N * (color_index_tmp - 1) / max_value)
+                        )
                         folium.PolyLine(
                             locations=[previous_value, curr_value],
                             color=hex_colors[color_index_tmp2],
@@ -124,4 +149,38 @@ class DataVisualization:
         ).add_to(map)
         # map.add_child(cmap)
         colormap.add_to(map)
+        return map
+
+    @staticmethod
+    def map_x_y_z_peaks(df, *args, **kwargs):
+        import folium
+        zoom_control = True
+        radius = 200
+
+        if "zoom_control" in kwargs.keys():
+            zoom_control = kwargs["zoom_control"]
+
+        if "radius" in kwargs.keys():
+            radius = kwargs["radius"]
+
+        map = folium.Map(
+            location=[47.00395, -10.40428],
+            tiles="OpenStreetMap",
+            zoom_start=3,
+            scrollWheelZoom=zoom_control,
+            control_scale=zoom_control,
+            dragging=zoom_control,
+        )
+
+        for curr_index, curr_value in enumerate(df["coordinates"]):
+            folium.Circle(
+                location=[curr_value[0], curr_value[1]],
+                radius=radius,
+                color="red",
+                fill=True,
+                fill_color="red",
+                fill_opacity=0.5,
+                opacity=0.5,
+            ).add_to(map)
+
         return map

@@ -56,6 +56,7 @@ Programming is performed using the open source distribution of VS Code from Micr
 
 # To-Do and Improvements for Next Time
 Unfortunately, I'm currently very busy at the moment and had to skip the following essentials:
+- Machine learning on Vessel-Features
 - alternatively start the docker container
 - transfer Data to SQL-DB (respecting 3.5 normal forms)
 - convert all numbers into SI-units
