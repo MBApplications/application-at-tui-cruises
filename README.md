@@ -4,8 +4,8 @@ The goal of this project is to analyze the provided dataset for two Cruise ships
 performance trends (e.g.: efficiency, propulsion, power generation, etc.).
 
 # Remarks (PLEASE READ)
-Unfortunately, I'm very busy at the moment and had to ignore the important aspects listed under "To-Do and Improvements for Next Time". The data you gave me are super-interesting and I have a lot of ideas. Moreover, I would expose the results on a web-UI using the modules Dash and/or Django, e.g. as shown here: \n
-https://dash.gallery/dash-opioid-epidemic/ \n
+Unfortunately, I'm very busy at the moment and had to ignore the important aspects listed under "To-Do and Improvements for Next Time". The data you gave me are super-interesting and I have a lot of ideas. Moreover, I would expose the results on a web-UI using the modules Dash and/or Django, e.g. as shown here: <br>
+https://dash.gallery/dash-opioid-epidemic/ <br>
 Hope, that the here presented work is still sufficient for a personal conversation.
 
 # Table of Contents
