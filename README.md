@@ -26,7 +26,7 @@ I have already done that in my last job...Hope, that the here presented work is 
 # Installation / Usage
 - start the main.ipynb script in the src-subfolder
 
-# Folder-Order
+# Folder Structure
 ```
 |   .gitignore                        <-- file-list ignored by github
 |   README.md                         <-- readme-overview
