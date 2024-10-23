@@ -3,9 +3,9 @@
 The goal of this project is to analyze the provided dataset for two Cruise ships and develop a narrative explaining the performance trends (e.g.: efficiency, propulsion, power generation, etc.).
 
 # Remarks (PLEASE READ)
-Unfortunately, I'm very busy at the moment and had to ignore the important aspects listed under "To-Do and Improvements for Next Time". The data you gave me are super-interesting and I have a lot of ideas. Moreover, I would expose the results on a web-UI using the modules Dash and/or Django, e.g. as shown here: <br>
+Unfortunately, I'm very busy at the moment and had to ignore the important aspects listed under "To-Do and Improvements for Next Time". The data are super-interesting and I have a lot of ideas. Moreover, I would present the results on a web-UI (with Dash and Django), e.g. as shown here: <br>
 https://dash.gallery/dash-opioid-epidemic/ <br>
-Hope, that the here presented work is still sufficient for a personal conversation.
+I have already done that in my last job...Hope, that the here presented work is still sufficient for a personal conversation, looking forward hearing from you.
 
 # Table of Contents
 
@@ -38,15 +38,15 @@ Hope, that the here presented work is still sufficient for a personal conversati
 |       task_description.pdf          <-- task send by TUI
 |
 +---src
-|   |   .env                          <-- constants for processing (paths etc.)
-|   |   main.ipynb                    <-- main, notebook for analysis
-|   |
-|   \---tui_cruises_data_science
-|       |   data_conversion.py        <-- conversion of data (to SI units etc.)
-|       |   data_reader.py            <-- data-reader class
-|       |   data_visualization.py     <-- visualization class
-|       |   styling.py                <-- minor styling specifications
-|       |   __init__.py               <-- class embedding as py-module
+    |   .env                          <-- constants for processing (paths etc.)
+    |   main.ipynb                    <-- main, notebook for analysis
+    |
+    \---tui_cruises_data_science
+        |   data_conversion.py        <-- conversion of data (to SI units etc.)
+        |   data_reader.py            <-- data-reader class
+        |   data_visualization.py     <-- visualization class
+        |   styling.py                <-- minor styling specifications
+        |   __init__.py               <-- class embedding as py-module
 ```
 
 # To-Do and Improvements for Next Time
@@ -60,10 +60,11 @@ Hope, that the here presented work is still sufficient for a personal conversati
 - data visualization with Web-UI (Django or Dash, example: https://dash.gallery/dash-opioid-epidemic/)
 - dockerization of an equivalent main.py, exposing web-UI to intranet of TUI company
 - improved branch-management and connection to Kanban-board (agiles management)
-- improved object-oriented structure (classes, subclasses, modules) and sustainable coding (markdown-description, improved commit-messages etc.)
+- improved object-oriented structure (classes, subclasses, modules)
+- sustainable coding (markdown-description, improved commit-messages, comments in code etc.)
 
 # Contributions
-This project has only contributer, which is the applicant himself.
+This project has only one contributer, who is the applicant himself.
 
 # Acknowledgments
-Data obtained from TUI Cruises GmbH in the context of an application for an internship as a data scientist.
+Data obtained from TUI Cruises GmbH in context of an application for an internship as a data scientist.
