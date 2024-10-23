@@ -24,7 +24,7 @@ I have already done that in my last job...Hope, that the here presented work is 
 <!-- /TOC -->
 
 # Installation / Usage
-- start the main.ipynb script in the src-subfolder
+Start the main.ipynb script of the src-subfolder.
 
 # Folder Structure
 ```
