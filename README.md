@@ -1,7 +1,6 @@
 # Analysis of Cruise Ship Data Towards Performance Trends
 
-The goal of this project is to analyze the provided dataset for two Cruise ships and develop a narrative explaining the
-performance trends (e.g.: efficiency, propulsion, power generation, etc.).
+The goal of this project is to analyze the provided dataset for two Cruise ships and develop a narrative explaining the performance trends (e.g.: efficiency, propulsion, power generation, etc.).
 
 # Remarks (PLEASE READ)
 Unfortunately, I'm very busy at the moment and had to ignore the important aspects listed under "To-Do and Improvements for Next Time". The data you gave me are super-interesting and I have a lot of ideas. Moreover, I would expose the results on a web-UI using the modules Dash and/or Django, e.g. as shown here: <br>
@@ -15,8 +14,6 @@ Hope, that the here presented work is still sufficient for a personal conversati
 - [Analysis of Cruise Ship Data Towards Performance Trends](#analysis-of-cruise-ship-data-towards-performance-trends)
 - [Remarks (PLEASE READ)](#remarks-please-read)
 - [Table of Contents](#table-of-contents)
-- [Project Plan and Execution](#project-plan-and-execution)
-- [Used Software](#used-software)
 - [Installation / Usage](#installation--usage)
 - [Folder-Order](#folder-order)
 - [To-Do and Improvements for Next Time](#to-do-and-improvements-for-next-time)
@@ -25,14 +22,8 @@ Hope, that the here presented work is still sufficient for a personal conversati
 
 <!-- /TOC -->
 
-# Project Plan and Execution
-Planning is done using the Kanban-board provided by the Github Web-UI. Check out the repository for further details of the incremental steps that were carried out.
-
-# Used Software
-Programming is performed using the open source distribution of VS Code from Microsoft.
-
 # Installation / Usage
-- start the main.ipynb-script in the src-subfolder
+- start the main.ipynb script in the src-subfolder
 
 # Folder-Order
 ```
@@ -59,15 +50,17 @@ Programming is performed using the open source distribution of VS Code from Micr
 ```
 
 # To-Do and Improvements for Next Time
+- "responsible" data processing:
+  - handling of NaNs, duplicates and missing data
+  - conversion of all numbers into SI-units
+  - Development of meaningful physical measurement parameters (forces in N, calculation of frictional forces, etc.)
 - machine learning on vessel-features with scikit-learn
-- alternatively start the docker container
 - transfer Data to SQL-DB (respecting 3.5 normal forms)
-- convert all numbers into SI-units
-- extraction of requirements.txt using Python-venv
+- working with Python-venv in order to extract a requirements.txt-file
 - data visualization with Web-UI (Django or Dash, example: https://dash.gallery/dash-opioid-epidemic/)
-- dockerization of main.py, exposing web-UI to localhost
+- dockerization of an equivalent main.py, exposing web-UI to intranet of TUI company
 - improved branch-management and connection to Kanban-board (agiles management)
-- improved object-oriented structure (classes, subclasses, modules) and sustainable programming (markdown-description, improved commit-messages etc.)
+- improved object-oriented structure (classes, subclasses, modules) and sustainable coding (markdown-description, improved commit-messages etc.)
 
 # Contributions
 This project has only contributer, which is the applicant himself.
