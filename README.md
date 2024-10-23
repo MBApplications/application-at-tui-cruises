@@ -17,6 +17,7 @@ I have already done that in my last job...Hope, that the here presented work is 
 - [Installation / Usage](#installation--usage)
 - [Folder-Order](#folder-order)
 - [To-Do and Improvements for Next Time](#to-do-and-improvements-for-next-time)
+- [Analysis Example](#analysis-example)
 - [Contributions](#contributions)
 - [Acknowledgments](#acknowledgments)
 
@@ -62,6 +63,9 @@ I have already done that in my last job...Hope, that the here presented work is 
 - improved branch-management and connection to Kanban-board (agiles management)
 - improved object-oriented structure (classes, subclasses, modules)
 - sustainable coding (markdown-description, improved commit-messages, comments in code etc.)
+
+# Analysis Example
+![Project Screenshot](./img/map_example.png)
 
 # Contributions
 This project has only one contributer, who is the applicant himself.
